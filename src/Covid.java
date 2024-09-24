@@ -46,6 +46,18 @@ public class Covid {
                 // Date,Country/Region,Confirmed,Deaths,Recovered,Active,New cases,New deaths,New recovered,WHO Region
                 // TODO: Create a new COVIDData object
 
+                COVIDData data = new COVIDData(
+                        parts[0], // Date
+                        parts[1], // Country/Region
+                        Integer.parseInt(parts[2]), // Confirmed
+                        Integer.parseInt(parts[3]), // Deaths
+                        Integer.parseInt(parts[4]), // Recovered
+                        Integer.parseInt(parts[5]), // Active
+                        Integer.parseInt(parts[6]), // New cases
+                        Integer.parseInt(parts[7]), // New deaths
+                        Integer.parseInt(parts[8]), // New recovered
+                        parts[9] // WHO Region
+                );
 
                 covidList.add(data); // add the data onto the ArrayList
             }
@@ -53,7 +65,7 @@ public class Covid {
         inputFileNameStream.close(); // because I care
 
         // TODO: Sort the COVID data
-
+        Collections.sort(covidList);
 
         // Print the COVID data
         for (COVIDData data : covidList) {
